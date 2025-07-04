@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Boxes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-family: sans-serif;
+      background: #f2f2f2;
+    }
+
+    .box {
+      width: 250px;
+      height: 100px;
+      background-color: white;
+      border: 2px solid #333;
+      border-radius: 10px;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .box.expanded {
+      width: 90%;
+      height: 300px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+
+    .box h3 {
+      margin-bottom: 10px;
+    }
+
+    .options {
+      display: none;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .box.expanded .options {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .option-button {
+      padding: 8px 12px;
+      background-color: #ddd;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .option-button:hover {
+      background-color: #bbb;
+    }
+
+    /* Spacer to visually separate top, middle, bottom */
+    .spacer {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Box -->
+  <div class="box" id="box1">
+    <h3>Top Box</h3>
+    <div class="options">
+      <button class="option-button">Red</button>
+      <button class="option-button">Blue</button>
+      <button class="option-button">Small</button>
+      <button class="opt
